@@ -1,0 +1,27 @@
+<h3 style="text-align: center;">Actividades</h3>
+<hr>
+<button (click)="agregarTarea()" type="button" class="btn btn-outline-info">
+    <i class="fa fa-plus-circle"></i>
+    Agregar tarea
+</button>
+<br><br>
+<div *ngIf="tareas.length==0">No hay tareas</div>
+
+<div *ngIf="tareas.length>0">
+    <div *ngFor="let tarea of tareas">
+
+        <div class="card border-primary mb-3 example-box " style="max-width: 18rem;" cdkDrag>
+            <div class="card-header" align="center">
+                <h5 class="badge badge-pill badge-light">{{tarea}}</h5>
+            </div>
+            <div class="card-body text-primary">
+                <textarea class="card-body text-primary" style="border: none; outline: 0; color:black" cols="25" rows="2"></textarea>
+            </div>
+            <div align="center"><button type="button" class="btn btn-outline-info">
+                Agregar
+            </button></div>
+            <br>
+        </div>
+
+    </div>
+</div>
